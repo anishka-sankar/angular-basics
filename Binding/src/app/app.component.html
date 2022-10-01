@@ -1,0 +1,42 @@
+<!-- One way binding(component -> template ) -->
+
+<!-- 1. Interpolation(evalutes expression) 
+   drawback: supports only strings(boolean types and other types are supported)-->
+
+<div>{{title}}</div>
+<div>{{2+2}}</div>
+<div>{{title.length}}</div>
+<div>{{title.toUpperCase()}}</div>
+
+
+<!-- 2. Property Binding -->
+
+<input type="text" [value]='color'>
+{{color}}
+
+<!-- 3. Attribute Binding -->
+<div>
+  <table>
+  <tr><td [attr.colspan]="3">three</td></tr>
+  <tr><td>1</td><td>2</td><td>3</td></tr>
+  </table>
+  </div>
+
+<!-- 4. Class Binding -->
+
+
+<!-- 5. Style Binding -->
+
+<!-- One way binding(template -> component ) -->
+
+<!-- Event Binding -->
+
+<button (click)="display()">Click Me</button>
+
+<!-- Two way Data Binding(property + event)-->
+
+<input [(ngModel)]="color">
+{{color}}
+
+
+
