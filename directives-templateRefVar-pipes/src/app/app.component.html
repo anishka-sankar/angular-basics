@@ -1,0 +1,87 @@
+<!-- Directives - way of manipulating DOM. We can change the appearance, behaviour and layout of DOM -->
+
+<!-- 3 types -->
+
+<!-- 1. Component -->
+ <!-- Used in main class. It contains a detail of how the component should be processed, instantiated and used at run time-->
+
+<!-- 2. Structural -->
+<!-- Starts with * sign. Changes structure of DOM-->
+
+<!-- *ngIf - adds/removes DOM element-->
+<div *ngIf="flag==true">
+  Flag is true
+</div>
+
+<!-- example for template reference -->
+<div *ngIf="flag==true else elseBlock">
+  Flag is true
+</div>
+
+<ng-template #elseBlock>
+  Flag is false
+</ng-template>
+
+<!-- *ngFor -->
+<div *ngFor="let a of arr">
+<div>{{a}}</div>
+</div>
+
+<!--*ngSwitch - Syntax(
+  <container_element [ngSwitch]="switch_expression">  
+    <inner_element *ngSwitchCase="match_expresson_1">...</inner_element>  
+    <inner_element *ngSwitchCase="match_expresson_2">...</inner_element>  
+    <inner_element *ngSwitchCase="match_expresson_3">...</inner_element>  
+    <inner_element *ngSwitchDefault>...</element>  
+</container_element>   
+)-->
+<div *ngFor="let a of arr">
+  <div [ngSwitch]="a">
+    <div *ngSwitchCase="10"> Value is 10</div>
+    <div *ngSwitchCase="13"> Values is 13</div>
+    <div *ngSwitchDefault>Dafault Value is 1</div>
+  </div>
+</div>
+
+
+<!-- 3. Attribute - Used to change look and behaviour of DOM elements -->
+
+<!-- ngStyle - adds/removes CSS classes to an HTML element. Can set styles dynamically-->
+<div [ngStyle]="{'background-color':'pink'}">
+  Example
+</div>
+
+<div [ngStyle]="{'background-color':value, 'color':'aqua'}">
+  Example
+</div>
+
+<a [ngStyle]="{'color':'blue'}" href="#">
+  Click this!
+</a>
+<!-- ngClass - changes style of an html element. Lets us set class name for DOM element. Used to pass values dynamically -->
+
+<div [ngClass]="'one'">
+  Inside class
+</div>
+
+<!--assigning class name dynamically-->
+
+<div [ngClass]="two">
+  Inside dynamic class name
+</div>
+
+<!-- passing array-->
+
+<div [ngClass]="[two, three]">
+  Inside class Array
+</div>
+
+<div [ngClass]="{'one':true, 'className1':false}">
+  Inside boolean class Array 
+</div>
+
+<!-- =================================Pipes- used to format the output which is displayed to the end user======================-->
+
+<div>
+  {{title | json  }}
+</div>
